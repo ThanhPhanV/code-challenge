@@ -96,6 +96,7 @@ The Score Board Application allows user to monitor the scores. It provides key f
 - Server Framework: NestJS
 - Database: postgres
 - Cached & Queue: Redis
+- Firebase authentication
 
 #### Flow Chart
 *Live Update Score Flow*
@@ -104,6 +105,11 @@ The Score Board Application allows user to monitor the scores. It provides key f
 
 #### Database
 Entity
+- user
+    - Id: integer auto increment
+    - name: varchar(50)
+    - updatedAt: timestamp
+    - createdAt: timestamp
 - Score
     - Id: integer auto increment
     - score: integer
