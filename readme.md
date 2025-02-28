@@ -176,16 +176,19 @@ The Score Board Application allows user to monitor the scores. It provides key f
     ]
     ```
     The score must be sorted from the server.
-Note:
-```
+
+**Note**
+`
 We use distributed lock in redis to handle concurrent requests for this api. Each update score request of the user (based on user id) must be locked while it is in the process or in 1 minutes.
 This ensures the data consistency, prevent from accessing outdated data.
-```
+`
 
 4. Emit Score Board Updated Event
 - Event: "score_board_broadcast_updated"
 - Data: <the same with api get top score>
-```
+
+**Note**
+`
 After the score of user is updated, an event will be published, it must be published one by time, first in first out to ensure the score board to update correctly in the client.
 We use bull queue (redis message queue), the emit the message one by one
-```
+`
