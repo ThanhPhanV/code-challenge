@@ -102,4 +102,4 @@ The Score Board Application allows user to monitor the scores. It provides key f
 
 #### Flow Chart
 *Live Update Score Flow*
-![Diagram Live Board](https://github.com/ThanhPhanV/code-challenge/blob/main/assets/app-flow.png)
+![Diagram Live Board](https://github.com/ThanhPhanV/code-challenge/blob/main/assets/code-challenge-app-flow.drawio.png)
