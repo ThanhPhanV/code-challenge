@@ -38,9 +38,6 @@ The solutions in three way are
     ```
     *Init database*
     ```
-    npm run migration:generate
-    ```
-    ```
     npm run migration:run
     ```
 4. Run the server.
@@ -66,12 +63,12 @@ The solutions in three way are
 
 2. Get Task Detail
     ```
-    curl --location 'http://localhost:3000/task/5'
+    curl --location 'http://localhost:3000/task/1'
     ```
 
 3. Update Task
     ```
-    curl --location --request PUT 'http://localhost:3000/task/5' \
+    curl --location --request PUT 'http://localhost:3000/task/1' \
     --header 'Content-Type: application/json' \
     --data '{
         "due": "2025-02-27T16:09:19.340Z",
@@ -81,7 +78,7 @@ The solutions in three way are
 
 4. Delete Task
     ```
-    curl --location --request DELETE 'http://localhost:3000/task/5'
+    curl --location --request DELETE 'http://localhost:3000/task/1'
     ```
     
 ### Problem 6: Score Board Application
