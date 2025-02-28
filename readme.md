@@ -84,3 +84,22 @@ The solutions in three way are
     curl --location --request DELETE 'http://localhost:3000/task/5'
     ```
     
+### Problem 6: Score Board Application
+#### Overview
+The Score Board Application allows user to monitor the scores. It provides key features:
+- User interface to monitor the score in board.
+- Score board update realtime
+- API for updating each user score.
+
+#### Security
+- Use JWT token for authentication.
+- Limit API call update.
+
+#### Technical
+- Server Framework: NestJS
+- Database: postgres
+- Cached & Queue: Redis
+
+#### Flow Chart
+*Live Update Score Flow*
+![alt text](https://github.com/ThanhPhanV/code-challenge/assets/main/update-score-realtime.jpg?raw=true)
