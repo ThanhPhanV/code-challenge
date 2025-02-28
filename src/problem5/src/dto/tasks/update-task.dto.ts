@@ -1,26 +1,24 @@
 import {
-  IsDateString,
   IsNotEmpty,
   IsOptional,
   IsString,
+  IsDateString,
 } from "class-validator";
-import { Column, Entity } from "typeorm";
-import { BaseEntity } from "../configs/base-entity.config";
+import { CreateTaskDto } from "./create-task.dto";
 
-@Entity()
-export class Task extends BaseEntity {
-  @Column()
+export class UpdateTaskDto extends CreateTaskDto {
+  @IsOptional()
   @IsString()
   @IsNotEmpty()
   name: string;
 
-  @Column()
   @IsOptional()
   @IsString()
   @IsNotEmpty()
   description?: string;
 
-  @Column({ type: "timestamp" })
+  @IsOptional()
   @IsDateString()
+  @IsNotEmpty()
   due?: string;
 }

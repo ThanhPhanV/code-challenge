@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 export abstract class BaseController {
-  protected path: string = "/";
+  protected path: string = "";
   protected router: Router;
   constructor(path: string) {
     this.path = path;
