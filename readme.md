@@ -101,6 +101,16 @@ The Score Board Application allows user to monitor the scores. It provides key f
 *Live Update Score Flow*
 ![Diagram Live Board](https://github.com/ThanhPhanV/code-challenge/blob/main/assets/code-challenge-app-flow.drawio.png)
 
+
+#### Database
+Entity
+- Score
+    - Id: integer auto increment
+    - score: integer
+    - userId: integer
+    - updatedAt: timestamp
+    - createdAt: timestamp
+
 #### API 
 1. Sign in
 - Path: /api/v1/auth/sign-in
@@ -166,8 +176,11 @@ The Score Board Application allows user to monitor the scores. It provides key f
     [
         {
             "id": "string",
-            "name": "string",
             "score": number,
+            "userId: number",
+            "userInfo: {
+                "name": "string"
+            },
             "updatedAt: "date string"
         }
     ]
