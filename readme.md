@@ -103,3 +103,76 @@ The Score Board Application allows user to monitor the scores. It provides key f
 #### Flow Chart
 *Live Update Score Flow*
 ![Diagram Live Board](https://github.com/ThanhPhanV/code-challenge/blob/main/assets/code-challenge-app-flow.drawio.png)
+
+#### API 
+1. Sign in
+- Path: /api/v1/auth/sign-in
+- Method: POST
+- Body:
+    ```json
+    {
+        "username": "string",
+        "password": "string"
+    }
+    ```
+- Response
+    ```json
+    {
+        "accessToken": "string",
+        "refreshToken": "string"
+    }
+    ```
+
+2. API update user score (inscrease score)
+- Path: */api/v1/user/action*
+- Method: POST
+- Headers: 
+    ```
+    {
+        authorization: `Bearer <jwt token>` 
+    }
+    ```
+- Body:
+    ```json
+    {
+        "action": "string"
+    }
+    ```
+    Action can be "win a football match", "get a certificates", etc.
+- Response:
+    ```
+    {
+        "score": 10,
+        "updatedAt": "date string"
+    }
+    ```
+    Return current score after update.
+
+2. API update user score (inscrease score)
+- Path: */api/v1/board-score/top?take=10*
+- Method: GET
+- Headers: 
+    ```
+    {
+        authorization: `Bearer <jwt token>` 
+    }
+    ```
+- Query Paremeters:
+    ```json
+    {
+        "take" :10
+    }
+    ```
+    Take is the number of top score users that shows on the board, default is 10
+- Response:
+    ```
+    [
+        {
+            "id": "string",
+            "name": "string",
+            "score": number,
+            "updatedAt: "date string"
+        }
+    ]
+    ```
+    The score must be sorted from the server.
